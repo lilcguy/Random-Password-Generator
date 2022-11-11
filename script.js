@@ -14,7 +14,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword); 
 
 function generatePassword(){  //return a string
-  var characterPool = [""]; 
+  var characterPool = []; 
   var lettersLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
   var lettersUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "O", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var charNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -53,8 +53,8 @@ function generatePassword(){  //return a string
     window.alert("no lowercase letters!");
    } else {
     window.alert("OK!");
-   // characterPool = lettersLowercase.concat();
-    //console.log(characterPool);
+    characterPool.push(lettersLowercase); //.push updates the array
+    console.log(characterPool);
 
    }
 
@@ -63,6 +63,7 @@ function generatePassword(){  //return a string
   if (uppercase === false){
     window.alert("no uppercase letters!");
    } else {
+    characterPool.push(lettersUpper);
     window.alert("OK!");
    }
 
@@ -72,8 +73,8 @@ function generatePassword(){  //return a string
     window.alert("no numbers!");
    } else {
     window.alert("OK!");
-    //characterPool = charNumbers.concat();
-    //console.log(characterPool);
+    characterPool.push(charNumbers);
+    console.log(characterPool);
    }
 
   var special = window.confirm("specials?"); //these return boolean values
@@ -82,9 +83,13 @@ function generatePassword(){  //return a string
     window.alert("no special characters!");
    } else {
     window.alert("OK!");
+    characterPool.push(charSpecial);
+    console.log(characterPool);
    }
 
+for (let i = 0; i <= password.length; i++){ //run random selection password.length times.
 
+}
 
 var values = [lowercase, uppercase, number, special];
 
