@@ -15,6 +15,9 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword); 
 
 function generatePassword(){  
+  
+  password = ""; //set var password to empty at the start of the function so that every run is new.
+
   var characterPool = ""; 
   var lettersLowercase = "abcdefghijklmnopqrstuvwxyz"
   var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
