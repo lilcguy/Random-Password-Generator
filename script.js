@@ -22,17 +22,21 @@ function generatePassword(){  //return a string
   // var password = math.random(characterPool * password.length times)
 
   
-  console.log(lettersLowercase);
-  console.log(lettersUpper);
-  console.log(charNumbers);
-  console.log(charSpecial);
+  //console.log(lettersLowercase);
+  //console.log(lettersUpper);
+  //console.log(charNumbers);
+  //console.log(charSpecial);
   
 
   var passwordLength = window.prompt("password length");
+  //couldnt get it to close out if they hit cancel.
+
+  
+
   console.log(passwordLength);
 
   var lengthCheck = isNaN(passwordLength); //if the input is not a number
-  console.log(lengthCheck); //tell dev: if its not a number then lengthCheck = true.
+  //console.log(lengthCheck); //tell dev: if its not a number then lengthCheck = true.
 
     if (lengthCheck){ //check if true
       window.alert("you didn't choose a number!"); //tell the user their naughty behavior
@@ -41,12 +45,7 @@ function generatePassword(){  //return a string
     }
   
 
-    /*if (passwordLength === num.NaN()) {
-          window.alert("you didn't choose a number! refresh the page!")
-    }
-  
-      //check if entry is a number, if not, go to beginning?
-      */
+   
 
   var lowercase = window.confirm("lowercase?"); //these return boolean values
   
@@ -54,9 +53,12 @@ function generatePassword(){  //return a string
     window.alert("no lowercase letters!");
    } else {
     window.alert("OK!");
+   // characterPool = lettersLowercase.concat();
+    //console.log(characterPool);
+
    }
 
-  var uppercase = window.confirm("uppercase?");
+  var uppercase = window.confirm("uppercase?"); //these return boolean values
 
   if (uppercase === false){
     window.alert("no uppercase letters!");
@@ -64,32 +66,45 @@ function generatePassword(){  //return a string
     window.alert("OK!");
    }
 
-  var number = window.confirm("numbers?");
+  var number = window.confirm("numbers?"); //these return boolean values
 
   if (number === false){
     window.alert("no numbers!");
    } else {
     window.alert("OK!");
+    //characterPool = charNumbers.concat();
+    //console.log(characterPool);
    }
 
-  var special = window.confirm("specials?");
+  var special = window.confirm("specials?"); //these return boolean values
   
   if (special === false){
     window.alert("no special characters!");
    } else {
     window.alert("OK!");
    }
-//
 
 
-    if (lowercase){                    //if yes, add the lowercase letters to the character pool (array?)
-      characterPool.concat(lettersLowercase);
+
+var values = [lowercase, uppercase, number, special];
+
+console.log(values);
+
+//console.log(lowercase);
+
+    /* if (lowercase){                    //if yes, add the lowercase letters to the character pool (array?)
+     characterPool = lettersLowercase.concat();
+      //console.log(characterPool);
+    } else if (uppercase) {
+      characterPool = lettersUpper.concat();
+    } else if (number){
+      characterPool = number.concat(lettersLowercase);
       console.log(characterPool);
     }
           
  
 
-
+*/
   return "password"; //placeholder
  
 }
