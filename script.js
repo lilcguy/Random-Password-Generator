@@ -29,6 +29,7 @@ function generatePassword(){  //return a string
   
 
   var passwordLength = window.prompt("password length");
+  console.log(passwordLength);
 
   var lengthCheck = isNaN(passwordLength); //if the input is not a number
   console.log(lengthCheck); //tell dev: if its not a number then lengthCheck = true.
@@ -47,27 +48,46 @@ function generatePassword(){  //return a string
       //check if entry is a number, if not, go to beginning?
       */
 
-  var lowercase = window.confirm("lowercase?");
+  var lowercase = window.confirm("lowercase?"); //these return boolean values
+  
+  if (lowercase === false){
+    window.alert("no lowercase letters!");
+   } else {
+    window.alert("OK!");
+   }
+
   var uppercase = window.confirm("uppercase?");
+
+  if (uppercase === false){
+    window.alert("no uppercase letters!");
+   } else {
+    window.alert("OK!");
+   }
+
   var number = window.confirm("numbers?");
+
+  if (number === false){
+    window.alert("no numbers!");
+   } else {
+    window.alert("OK!");
+   }
+
   var special = window.confirm("specials?");
   
- 
-
+  if (special === false){
+    window.alert("no special characters!");
+   } else {
+    window.alert("OK!");
+   }
+//
 
 
     if (lowercase){                    //if yes, add the lowercase letters to the character pool (array?)
-      characterPool += lettersLowercase;
-          
-    } else if (uppercase){
-      characterPool += lettersUpper;
-          
-    } else if (numbers){
-      characterPool += charNumbers;
-        
+      characterPool.concat(lettersLowercase);
+      console.log(characterPool);
     }
-   // console.log(characterPool); 
-
+          
+ 
 
 
   return "password"; //placeholder
